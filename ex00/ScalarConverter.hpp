@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjarnac <pjarnac@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 16:55:21 by pjarnac           #+#    #+#             */
-/*   Updated: 2025/10/30 16:55:21 by pjarnac          ###   ########.fr       */
+/*   Created: 2025/10/30 16:58:50 by pjarnac           #+#    #+#             */
+/*   Updated: 2025/10/30 16:58:50 by pjarnac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
+#include <string>
 
-int	main(int c, char **args)
+class ScalarConverter
 {
-	if (c == 2)
+private:
+	ScalarConverter();
+	ScalarConverter(ScalarConverter const &);
+	ScalarConverter	&operator=(ScalarConverter const &);
+	~ScalarConverter();
+
+public:
+	enum Type
 	{
-		ScalarConverter::convert(args[1]);
-	}
-}
+		NONE,
+		CHAR,
+		INT,
+		DOUBLE,
+		FLOAT
+	};
+	static void	convert(std::string const &t_str);
+};
+
+#endif

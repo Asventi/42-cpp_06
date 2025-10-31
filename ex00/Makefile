@@ -27,7 +27,7 @@ DEPS			=	$(patsubst %.cpp, $(BUILD_DIR)%.d, $(SRC))
 # ================ROOT================= #
 
 SRC				=	main.cpp \
-
+					ScalarConverter.cpp \
 
 
 ## ===============SAMPLE================ #
